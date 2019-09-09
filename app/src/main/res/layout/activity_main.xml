@@ -106,7 +106,7 @@
         android:text="@string/sign_up_btn_home"
         android:textSize="16sp"
         android:textColor="#1A2F9C"
-        android:layout_marginRight="60dp"
+        android:layout_marginRight="65dp"
         android:layout_marginEnd="60dp" />
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_view_googleloginbtn"

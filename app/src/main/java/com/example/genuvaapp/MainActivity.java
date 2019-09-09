@@ -130,6 +130,7 @@ phonelogin.setOnClickListener(new View.OnClickListener() {
         }
     }
 
+    //google
     private void FirebaseAuthWithGoogle(GoogleSignInAccount account) {
         Log.d("TAG" , " Fire base Auth With Google: " + account.getId() );
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
