@@ -54,7 +54,13 @@ static final int Google_Sigin=123;
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder()
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mgoogleSignInClient = GoogleSignIn.getClient(this , googleSignInOptions);
-
+        forgetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent forget = new Intent(MainActivity.this , ForgetPass.class);
+                startActivity(forget);
+            }
+        });
         googlelogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
