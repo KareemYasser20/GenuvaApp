@@ -14,7 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenManager;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -31,13 +38,18 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.w3c.dom.Text;
 
+import java.sql.Array;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     EditText useremail, userpass;
-Button login , googlelogin , phonelogin , facebooklogin;
+Button login , googlelogin , phonelogin ;
+LoginButton facebooklogin;
 TextView forgetpass , signup;
 static final int Google_Sigin=123;
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     GoogleSignInClient mgoogleSignInClient;
+    private CallbackManager callbackManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +62,43 @@ static final int Google_Sigin=123;
         signup=findViewById(R.id.Signup_homepage);
         useremail=findViewById(R.id.userEmail);
         userpass=findViewById(R.id.Password);
+        callbackManager = CallbackManager.Factory.create();
+        facebooklogin.setReadPermissions(Arrays.asList("email"));
+
+        facebooklogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Intent intent =new Intent(MainActivity.this , Partydaesign.class);
+                startActivity(intent);
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder()
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
@@ -117,6 +166,7 @@ phonelogin.setOnClickListener(new View.OnClickListener() {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode ,data);
         if (requestCode == Google_Sigin){
             Task<GoogleSignInAccount> task = GoogleSignIn
                     .getSignedInAccountFromIntent(data);
@@ -154,5 +204,7 @@ phonelogin.setOnClickListener(new View.OnClickListener() {
         });
 
     }
+
+
 
 }
