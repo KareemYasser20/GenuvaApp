@@ -21,16 +21,14 @@ public class PartyAdapter extends ArrayAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view= LayoutInflater.from(getContext()).inflate(R.layout.partyrow,parent,false);
-        ImageView bandimage = view.findViewById(R.id.Party_team_image);
-        TextView bandname= view.findViewById(R.id.team_name);
-        TextView partydate = view.findViewById(R.id.party_date);
-        Button book_btn = view.findViewById(R.id.book_party);
+        View view= LayoutInflater.from(getContext()).inflate(R.layout.concertsrow,parent,false);
+        ImageView bandimage = view.findViewById(R.id.concert_band_image);
+        TextView bandname= view.findViewById(R.id.concert_band_name);
+        TextView partydate = view.findViewById(R.id.concert_date);
         PartyModel partyModel = (PartyModel) getItem(position);
         bandimage.setImageResource(partyModel.getTeamimage());
         bandname.setText(partyModel.getTeamname());
         partydate.setText(partyModel.getPartydate());
-        book_btn.setText(partyModel.getBtn_name());
 
         return view;
     }

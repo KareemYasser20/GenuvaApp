@@ -2,17 +2,17 @@ package com.example.genuvaapp;
 
 public class PartyModel {
     int teamimage;
-    String teamname , partydate , btn_name , id , PartyFirstClass , PartySecondClass , PartyThirdClass;
+    String teamname , partydate  , id , PartyFirstClass , PartySecondClass , PartyThirdClass;
 
     public PartyModel() {
 
     }
 
-    public PartyModel(int teamimage, String teamname, String partydate, String btn_name, String id, String partyFirstClass, String partySecondClass, String partyThirdClass) {
+    public PartyModel(int teamimage, String teamname, String partydate, String id, String partyFirstClass, String partySecondClass, String partyThirdClass) {
         this.teamimage = teamimage;
         this.teamname = teamname;
         this.partydate = partydate;
-        this.btn_name = btn_name;
+
         this.id = id;
         this.PartyFirstClass = partyFirstClass;
         this.PartySecondClass = partySecondClass;
@@ -41,14 +41,6 @@ public class PartyModel {
 
     public void setPartydate(String partydate) {
         this.partydate = partydate;
-    }
-
-    public String getBtn_name() {
-        return btn_name;
-    }
-
-    public void setBtn_name(String btn_name) {
-        this.btn_name = btn_name;
     }
 
     public String getId() {

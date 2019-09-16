@@ -29,10 +29,10 @@ public class Blankfragment extends Fragment {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
          String partykey =database.push().getKey();
 
-         PartyModel Party1 = new PartyModel(10, "Cairokee" , "24/9/2019" , "Book Now" , partykey , "80" , "50" , "40"  );
+         PartyModel Party1 = new PartyModel(10, "Cairokee" , "24/9/2019" ,  partykey , "80" , "50" , "40"  );
         database.child("Sakia").child(partykey).setValue(Party1);
 
-        PartyModel Party2 = new PartyModel(10, "Amr " , "28/9/2019" , "Book Now" , partykey , "120" , "80" , "70"  );
+        PartyModel Party2 = new PartyModel(10, "Amr " , "28/9/2019" ,  partykey , "120" , "80" , "70"  );
         database.child("Sakia").child(partykey).setValue(Party2);
 
         database.child("Sakia").addValueEventListener(new ValueEventListener() {
