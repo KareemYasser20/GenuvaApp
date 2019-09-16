@@ -68,7 +68,7 @@ static final int Google_Sigin=123;
         facebooklogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent =new Intent(MainActivity.this , Partydaesign.class);
+                Intent intent =new Intent(MainActivity.this , ConcertPlace.class);
                 startActivity(intent);
 
             }
@@ -147,7 +147,7 @@ phonelogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
            if (task.isSuccessful()){
-               Intent partyplace = new Intent(MainActivity.this , Partydaesign.class);
+               Intent partyplace = new Intent(MainActivity.this , ConcertPlace.class);
                startActivity(partyplace);
            }
            else {
@@ -176,7 +176,7 @@ phonelogin.setOnClickListener(new View.OnClickListener() {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 if (account != null ) FirebaseAuthWithGoogle(account);
                 if (task.isSuccessful()){
-                    Intent intent = new Intent(MainActivity.this , Partydaesign.class);
+                    Intent intent = new Intent(MainActivity.this , ConcertPlace.class);
                     startActivity(intent);
                 }
             }catch (ApiException e){

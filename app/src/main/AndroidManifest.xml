@@ -16,7 +16,6 @@
         <activity android:name=".ForgetPass" />
         <activity android:name=".PhoneSigIn" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".Partydaesign" />
         <activity android:name=".Party_places" />
         <activity android:name=".MainActivity">
             <intent-filter>
