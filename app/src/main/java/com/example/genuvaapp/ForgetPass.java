@@ -46,7 +46,13 @@ private FirebaseAuth mAuth;
                                 startActivity(intent);
 
                             }
+                            else {
+                                Toast.makeText(ForgetPass.this, "Please Enter Valid Email", Toast.LENGTH_SHORT).show();
+
+                            }
                         }
+
+
                     });
                 }
             }

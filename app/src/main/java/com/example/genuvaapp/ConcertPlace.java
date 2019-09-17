@@ -3,13 +3,17 @@ package com.example.genuvaapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ConcertPlace extends AppCompatActivity {
 CardView SakiaConcret , OperaConcret ;
 ImageView Sakia, Opera;
+TextView Sakianame , Operaname;
 Button myticket , logout , controlpanel ;
 
     @Override
@@ -23,6 +27,14 @@ Button myticket , logout , controlpanel ;
         myticket=findViewById(R.id.myticket_btn);
         logout=findViewById(R.id.logout_btn);
         controlpanel=findViewById(R.id.control_panel_btn);
+
+        Sakia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConcertPlace.this ,SakiaConcerts.class);
+                startActivity(intent);
+            }
+        });
         
 
     }
