@@ -31,7 +31,7 @@ Button myticket , logout , controlpanel ;
         Sakia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ConcertPlace.this ,SakiaConcerts.class);
+                Intent intent = new Intent(ConcertPlace.this ,SakiaConcert.class);
                 startActivity(intent);
             }
         });

@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SakiaConcerts"></activity>
+        <activity android:name=".SakiaConcert"></activity>
         <activity android:name=".ConcertPlace" />
         <activity android:name=".ForgetPass" />
         <activity android:name=".PhoneSigIn" />

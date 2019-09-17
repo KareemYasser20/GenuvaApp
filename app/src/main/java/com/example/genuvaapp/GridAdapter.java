@@ -1,49 +1,40 @@
 package com.example.genuvaapp;
 
 import android.content.Context;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 
-public class GridAdapter extends BaseAdapter {
-    public GridAdapter(ArrayList<PartyModel> data, Context context) {
-        this.data = data;
-        this.context = context;
+
+public class GridAdapter extends ArrayAdapter {
+
+
+    public GridAdapter(@NonNull Context context, int resource, @NonNull ArrayList<PartyModel> objects) {
+        super(context, resource, objects);
+
     }
 
-    ArrayList<PartyModel> data;
-    Context context;
+    @NonNull
     @Override
-    public int getCount() {
-        return data.size();
-    }
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-    @Override
-    public Object getItem(int i) {
-        return data.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
-        View view =LayoutInflater.from(context).inflate(R.layout.concertsrow, viewGroup);
-        ImageView bandimage=view.findViewById(R.id.concert_band_image);
-        TextView  bandname=view.findViewById(R.id.concert_band_name);
-        TextView  concertdate=view.findViewById(R.id.concert_date);
-        PartyModel sakiaconcet = (PartyModel) getItem(i);
-        bandimage.setImageResource(data.get(i).getTeamimage());
-        bandname.setText(data.get(i).getTeamname());
-        concertdate.setText(sakiaconcet.getPartydate());
-
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.concertsrow , parent , false);
+        ImageView bandimage = view.findViewById(R.id.concert_band_image);
+        TextView  bandname = view.findViewById(R.id.concert_band_name);
+        TextView  concertdate= view.findViewById(R.id.concert_date);
+        PartyModel concertmodel = (PartyModel) getItem(position);
+        bandimage.setImageResource(concertmodel.getTeamimage());
+        bandname.setText(concertmodel.getTeamname());
+        concertdate.setText(concertmodel.getPartydate());
         return view;
     }
 }
