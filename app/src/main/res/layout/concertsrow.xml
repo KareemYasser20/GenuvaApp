@@ -4,7 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     >
 
 
@@ -18,7 +17,9 @@
         android:layout_height="220dp"
         android:src="@drawable/background"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitXY"
+
         />
     <TextView
         app:layout_constraintBottom_toTopOf="@+id/concert_date"
@@ -47,5 +48,6 @@
         android:background="#C41735BE"
         android:gravity="center"
         />
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
