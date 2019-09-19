@@ -19,4 +19,5 @@
     <string name="get_verification_code">Get verification Code</string>
     <string name="facebook_app_id">469093797007573</string>
     <string name="fb_login_protocol_scheme">fb469093797007573</string>
+    <string name="login_btn_Adminpage">Login</string>
 </resources>

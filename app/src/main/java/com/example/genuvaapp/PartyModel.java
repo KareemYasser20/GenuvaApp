@@ -1,54 +1,52 @@
 package com.example.genuvaapp;
 
 public class PartyModel {
-    int teamimage;
-    String teamname , partydate  , id , PartyFirstClass , PartySecondClass , PartyThirdClass;
+    String PartyCoverImage , PartyName , PartyTime  , PartyKey , PartyFirstClass , PartySecondClass , PartyThirdClass ;
 
     public PartyModel() {
 
     }
 
-    public PartyModel(int teamimage, String teamname, String partydate, String id, String partyFirstClass, String partySecondClass, String partyThirdClass) {
-        this.teamimage = teamimage;
-        this.teamname = teamname;
-        this.partydate = partydate;
-
-        this.id = id;
-        this.PartyFirstClass = partyFirstClass;
-        this.PartySecondClass = partySecondClass;
-        this.PartyThirdClass = partyThirdClass;
+    public PartyModel(String partyCoverImage, String partyName, String partyTime, String partyKey, String partyFirstClass, String partySecondClass, String partyThirdClass) {
+        PartyCoverImage = partyCoverImage;
+        PartyName = partyName;
+        PartyTime = partyTime;
+        PartyKey = partyKey;
+        PartyFirstClass = partyFirstClass;
+        PartySecondClass = partySecondClass;
+        PartyThirdClass = partyThirdClass;
     }
 
-    public int getTeamimage() {
-        return teamimage;
+    public String getPartyCoverImage() {
+        return PartyCoverImage;
     }
 
-    public void setTeamimage(int teamimage) {
-        this.teamimage = teamimage;
+    public void setPartyCoverImage(String partyCoverImage) {
+        PartyCoverImage = partyCoverImage;
     }
 
-    public String getTeamname() {
-        return teamname;
+    public String getPartyName() {
+        return PartyName;
     }
 
-    public void setTeamname(String teamname) {
-        this.teamname = teamname;
+    public void setPartyName(String partyName) {
+        PartyName = partyName;
     }
 
-    public String getPartydate() {
-        return partydate;
+    public String getPartyTime() {
+        return PartyTime;
     }
 
-    public void setPartydate(String partydate) {
-        this.partydate = partydate;
+    public void setPartyTime(String partyTime) {
+        PartyTime = partyTime;
     }
 
-    public String getId() {
-        return id;
+    public String getPartyKey() {
+        return PartyKey;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPartyKey(String partyKey) {
+        PartyKey = partyKey;
     }
 
     public String getPartyFirstClass() {

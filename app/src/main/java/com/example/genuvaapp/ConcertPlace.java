@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class ConcertPlace extends AppCompatActivity {
 CardView SakiaConcret , OperaConcret ;
-ImageView Sakia, Opera;
+ImageView Sakia, Opera , addparty;
 TextView Sakianame , Operaname;
 Button myticket , logout , controlpanel ;
 
@@ -27,6 +27,7 @@ Button myticket , logout , controlpanel ;
         myticket=findViewById(R.id.myticket_btn);
         logout=findViewById(R.id.logout_btn);
         controlpanel=findViewById(R.id.control_panel_btn);
+        addparty=findViewById(R.id.add_party);
 
         Sakia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +36,12 @@ Button myticket , logout , controlpanel ;
                 startActivity(intent);
             }
         });
-        
+        addparty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 }
