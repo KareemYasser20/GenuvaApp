@@ -36,6 +36,14 @@ Button myticket , logout , controlpanel ;
                 startActivity(intent);
             }
         });
+
+        Opera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ConcertPlace.this ,OperaConcerts.class);
+                startActivity(intent);
+            }
+        });
         addparty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

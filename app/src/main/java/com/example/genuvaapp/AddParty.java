@@ -39,6 +39,7 @@ public class AddParty extends AppCompatActivity {
     public static String imgeUrl;
 
     ArrayList<PartyModel> Sakiaconcerts = new ArrayList<>();
+    ArrayList<PartyModel> Operaconcerts = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,7 @@ public class AddParty extends AppCompatActivity {
 
                 AddSakiaParty();
                 }else {
-                    Toast.makeText(AddParty.this, "Opera House", Toast.LENGTH_SHORT).show();
+                    AddOperaParty();
                 }
             }
         });
@@ -82,6 +83,41 @@ public class AddParty extends AppCompatActivity {
 
 
     }
+
+    private void AddOperaParty() {
+        String randamOperaid=realtimeRef.push().getKey();
+        PartyModel OperaParty1 = new PartyModel(imgeUrl , Partyname.getText().toString()
+                , Partytime.getText().toString() , randamOperaid , FirstClassticketprice.getText().toString()
+                , SecondClassticketprice.getText().toString() ,  ThirdClassticketprice.getText().toString()  );
+
+        Operaconcerts.add(OperaParty1);
+        realtimeRef.child("Opera").child(randamOperaid).setValue(OperaParty1);
+        for (int i=1 ; i<=10 ; i++)
+        {
+            SeatsModel F_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , FirstClassticketprice.getText().toString() );
+            realtimeRef.child("Opera").child(randamOperaid).child("Seats").child(String.valueOf(i)).setValue(F_class_Seats);
+        }
+
+        for (int i=11 ; i<=20 ; i++)
+        {
+            SeatsModel S_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , SecondClassticketprice.getText().toString() );
+            realtimeRef.child("Opera").child(randamOperaid).child("Seats").child(String.valueOf(i)).setValue(S_class_Seats);
+        }
+
+        for (int i=21 ; i<=30 ; i++)
+        {
+            SeatsModel T_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , ThirdClassticketprice.getText().toString() );
+            realtimeRef.child("Opera").child(randamOperaid).child("Seats").child(String.valueOf(i)).setValue(T_class_Seats);
+        }
+
+
+    }
+
+
+
+
+
+
 
     void AddSakiaParty()
     {
