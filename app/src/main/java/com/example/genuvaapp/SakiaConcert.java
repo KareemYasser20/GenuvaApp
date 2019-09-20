@@ -55,17 +55,17 @@ public class SakiaConcert extends AppCompatActivity {
     }
 
     private void Showdata(DataSnapshot dataSnapshot) {
-        for (DataSnapshot ds: dataSnapshot.getChildren()
+        for (DataSnapshot shot: dataSnapshot.getChildren()
              ) {
-            PartyModel getdata = new PartyModel();
-            getdata = (PartyModel) ds.getValue();
+            PartyModel Party = shot.getValue(PartyModel.class);
 
-            concerts.add(getdata);
+            concerts.add(Party);
 
-            GridAdapter adapter = new GridAdapter( SakiaConcert.this, R.layout.concertsrow , concerts);
-            Sakia_gridview.setAdapter(adapter);
             
         }
+
+        GridAdapter adapter = new GridAdapter( SakiaConcert.this, R.layout.concertsrow , concerts);
+        Sakia_gridview.setAdapter(adapter);
         
     }
 

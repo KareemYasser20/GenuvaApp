@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 
@@ -32,7 +31,7 @@ public class GridAdapter extends ArrayAdapter {
         TextView  bandname = view.findViewById(R.id.concert_band_name);
         TextView  concertdate= view.findViewById(R.id.concert_date);
         PartyModel concertmodel = (PartyModel) getItem(position);
-//        bandimage.setImageResource(concertmodel.getPartyCoverImage());
+        Picasso.get().load(concertmodel.getPartyCoverImage()).into(bandimage);
         bandname.setText(concertmodel.getPartyName());
         concertdate.setText(concertmodel.getPartyTime());
         return view;

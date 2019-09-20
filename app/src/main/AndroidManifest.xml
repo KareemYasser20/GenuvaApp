@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddParty"></activity>
+        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".AddParty" />
         <activity android:name=".AdminLogin" />
         <activity android:name=".SakiaConcert" />
         <activity android:name=".ConcertPlace" />
