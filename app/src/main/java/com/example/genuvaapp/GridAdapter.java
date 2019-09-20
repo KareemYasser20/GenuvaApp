@@ -32,9 +32,9 @@ public class GridAdapter extends ArrayAdapter {
         TextView  bandname = view.findViewById(R.id.concert_band_name);
         TextView  concertdate= view.findViewById(R.id.concert_date);
         PartyModel concertmodel = (PartyModel) getItem(position);
-        bandimage.setImageResource(concertmodel.getTeamimage());
-        bandname.setText(concertmodel.getTeamname());
-        concertdate.setText(concertmodel.getPartydate());
+//        bandimage.setImageResource(concertmodel.getPartyCoverImage());
+        bandname.setText(concertmodel.getPartyName());
+        concertdate.setText(concertmodel.getPartyTime());
         return view;
     }
 }

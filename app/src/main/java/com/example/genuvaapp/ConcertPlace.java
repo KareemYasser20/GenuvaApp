@@ -39,7 +39,8 @@ Button myticket , logout , controlpanel ;
         addparty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent Addparty = new Intent(ConcertPlace.this , AdminLogin.class);
+                startActivity(Addparty);
             }
         });
 
