@@ -33,6 +33,9 @@ public class SakiaConcert extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sakia_concert);
+        Sakia_gridview = findViewById(R.id.Sakia_gridview);
+
+
 
         realtimeRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,7 +50,7 @@ public class SakiaConcert extends AppCompatActivity {
         });
 
 
-        Sakia_gridview = findViewById(R.id.Sakia_gridview);
+
 
 
 
@@ -55,10 +58,9 @@ public class SakiaConcert extends AppCompatActivity {
     }
 
     private void Showdata(DataSnapshot dataSnapshot) {
-        for (DataSnapshot shot: dataSnapshot.getChildren()
+        for (DataSnapshot shot: dataSnapshot.child("Sakia").getChildren()
              ) {
             PartyModel Party = shot.getValue(PartyModel.class);
-
             concerts.add(Party);
 
             

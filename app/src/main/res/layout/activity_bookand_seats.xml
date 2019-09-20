@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/splashscreen"
-        android:scaleType="fitXY"
-        />
+    tools:context=".BookandSeats">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

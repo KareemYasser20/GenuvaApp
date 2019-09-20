@@ -2,10 +2,12 @@ package com.example.genuvaapp;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -34,6 +36,15 @@ public class GridAdapter extends ArrayAdapter {
         Picasso.get().load(concertmodel.getPartyCoverImage()).into(bandimage);
         bandname.setText(concertmodel.getPartyName());
         concertdate.setText(concertmodel.getPartyTime());
+
+
+
+
+
+
         return view;
     }
+
+
+
 }

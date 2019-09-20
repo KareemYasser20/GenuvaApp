@@ -93,6 +93,25 @@ public class AddParty extends AppCompatActivity {
         Sakiaconcerts.add(SakiaParty1);
         realtimeRef.child("Sakia").child(randamid).setValue(SakiaParty1);
 
+        for (int i=1 ; i<=10 ; i++)
+        {
+            SeatsModel F_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , FirstClassticketprice.getText().toString() );
+            realtimeRef.child("Sakia").child(randamid).child("Seats").child(String.valueOf(i)).setValue(F_class_Seats);
+        }
+
+        for (int i=11 ; i<=20 ; i++)
+        {
+            SeatsModel S_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , SecondClassticketprice.getText().toString() );
+            realtimeRef.child("Sakia").child(randamid).child("Seats").child(String.valueOf(i)).setValue(S_class_Seats);
+        }
+
+        for (int i=21 ; i<=30 ; i++)
+        {
+            SeatsModel T_class_Seats = new SeatsModel(String.valueOf(i) , "Available" , ThirdClassticketprice.getText().toString() );
+            realtimeRef.child("Sakia").child(randamid).child("Seats").child(String.valueOf(i)).setValue(T_class_Seats);
+        }
+
+
 
 
     }
