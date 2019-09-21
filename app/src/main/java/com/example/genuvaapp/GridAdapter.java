@@ -19,10 +19,13 @@ import java.util.ArrayList;
 public class GridAdapter extends ArrayAdapter {
 
 
+
+
     public GridAdapter(@NonNull Context context, int resource, @NonNull ArrayList<PartyModel> objects) {
         super(context, resource, objects);
 
     }
+
 
     @NonNull
     @Override
@@ -36,9 +39,6 @@ public class GridAdapter extends ArrayAdapter {
         Picasso.get().load(concertmodel.getPartyCoverImage()).into(bandimage);
         bandname.setText(concertmodel.getPartyName());
         concertdate.setText(concertmodel.getPartyTime());
-
-
-
 
 
 

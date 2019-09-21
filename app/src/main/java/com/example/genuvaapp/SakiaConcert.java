@@ -35,8 +35,6 @@ public class SakiaConcert extends AppCompatActivity {
         setContentView(R.layout.activity_sakia_concert);
         Sakia_gridview = findViewById(R.id.Sakia_gridview);
 
-
-
         realtimeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
