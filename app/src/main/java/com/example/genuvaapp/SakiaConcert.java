@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -34,6 +35,16 @@ public class SakiaConcert extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sakia_concert);
         Sakia_gridview = findViewById(R.id.Sakia_gridview);
+
+
+        Sakia_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+           Intent bookSests = new Intent(SakiaConcert.this , BookandSeats.class);
+           startActivity(bookSests);
+            }
+        });
 
         realtimeRef.addValueEventListener(new ValueEventListener() {
             @Override

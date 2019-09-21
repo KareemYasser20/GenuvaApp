@@ -3,7 +3,10 @@ package com.example.genuvaapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,6 +28,16 @@ public class OperaConcerts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opera_concerts);
         Opera_gridview=findViewById(R.id.Opera_gridview);
+
+        Opera_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Intent bookSests = new Intent(OperaConcerts.this , BookandSeats.class);
+                startActivity(bookSests);
+            }
+        });
+
         realtimeRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

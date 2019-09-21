@@ -40,8 +40,6 @@ public class GridAdapter extends ArrayAdapter {
         bandname.setText(concertmodel.getPartyName());
         concertdate.setText(concertmodel.getPartyTime());
 
-
-
         return view;
     }
 
