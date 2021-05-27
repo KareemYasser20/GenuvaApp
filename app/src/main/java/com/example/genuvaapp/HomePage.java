@@ -91,7 +91,7 @@ public class HomePage extends AppCompatActivity {
 
 
 
-
+// fix this error.
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder()
                 .requestIdToken("122765517451-htn1shdqr27jcvukc5tpbse4q9q9bjdt.apps.googleusercontent.com").requestEmail().build();
         mgoogleSignInClient = GoogleSignIn.getClient(this , googleSignInOptions);
