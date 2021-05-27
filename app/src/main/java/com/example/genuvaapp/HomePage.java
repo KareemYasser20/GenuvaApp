@@ -93,7 +93,7 @@ public class HomePage extends AppCompatActivity {
 
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder()
-                .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+                .requestIdToken("122765517451-htn1shdqr27jcvukc5tpbse4q9q9bjdt.apps.googleusercontent.com").requestEmail().build();
         mgoogleSignInClient = GoogleSignIn.getClient(this , googleSignInOptions);
         forgetpass.setOnClickListener(new View.OnClickListener() {
             @Override
